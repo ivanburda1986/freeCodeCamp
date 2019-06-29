@@ -5,71 +5,91 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="styles/stylesheet.css">
-  <title>Document</title>
+  <title>Survey Form: Cormac McCarthy Meetup</title>
 </head>
+
 <body>
   <h1 id="title">Cormac McCarthy - Meetup</h1>
-  <form id="survey-form">
-    <p id="description">Tell us about your interest in Cormac McCarthy to help us prepare the best meetup!</p>
-    
-    <label for="name" id="name-label">Name</label>
-    <input type="text" name="name" placeholder="Enter your name" id="name" required>
-    
-    <label for="email" id="email-label">E-mail</label>
-    <input type="email" name="email" placeholder="Enter your e-mail" id="email" required>
-    
-    <label for="age" id="number-label">Age</label>
-    <input type="number" name="age" min="1" max="99" placeholder="Age" id="number">
-    
-    <label for="interest">Your interest in Cormac McCarthy</label>
-    <select name="interest">
-      <option value="occassionalReader">Read a few novels</option>
-      <option value="avidReader">Read all novels</option>
-      <option value="devotedFan">Read everything and follow all news</option>
-      <option value="freetimeEnthusiast">Free-time enthusiast</option>
-      <option value="proEnthusiast">Professional enthusiast</option>
-    </select>
-    
-    <p>How many novels by Cormac McCarthy do you have at home?</p>
-    <div>
-      <input type="radio" id="noNovels" name="novelCount" value="None">
-      <label for="noNovels">None</label>
-      
-      <input type="radio" id="1to5" name="novelCount" value="1-5">
-      <label for="1to5">1-5</label>
-      
-      <input type="radio" id="5to9" name="novelCount" value="5-9">
-      <label for="5to9">5-9</label>
-      
-      <input type="radio" id="all" name="novelCount" value="all">
-      <label for="all">All</label>
-    </div>
-    
-    <label for="favouriteBook">Your book no.1:</label>
-    <select name="favouriteBook" id="dropdown">
-      <option value="noCountry">No Country For Old Men</option>
-      <option value="theRoad">The Road</option>
-      <option value="allThePrettyHorses">All The Pretty Horses</option>
-      <option value="bloodMeridean">The Blood Meridean</option>
-      <option value="godChild">The Child of God</option>
-    </select>
-    
-    <p>What are the most memorable characters of McCarthy's novels?</p>
-    <div>
-      <input type="checkbox" name="char1" value="Maryon Sylder">Maryon Sylder<br>
-      <input type="checkbox" name="char1" value="Cula Holme">Cula Holme<br>
-      <input type="checkbox" name="char1" value="John Grady Cole">John Grady Cole<br>
-      <input type="checkbox" name="char1" value="Suttree">Suttree<br>
-      <input type="checkbox" name="char1" value="Lester Ballard">Lester Ballard<br>
-      <input type="checkbox" name="char1" value="Judge Holden">Judge Holden<br>
-      <input type="checkbox" name="char1" value="Billy Parham">Billy Parham<br>
-    </div>
-    
-    <p>Anything else you would like to tell us in order to organise the best meetup about Cormac McCarthy?</p>
-    <textarea rows="4" cols="50"></textarea>
-    
-    <input type="submit" value="Submit answers" id="submit">
-    
-  </form>
+
+  <div id="form-container">
+    <form id="survey-form">
+        <p id="description">Tell us about your interest in Cormac McCarthy to help us prepare the best meetup!</p>
+        
+        <div class="formRow">
+            <div class="labels"><label for="name" id="name-label"><span class="required">*</span>Name</label></div>
+            <div class="right-tab"><input type="text" name="name" placeholder="Enter your name" id="name" required></div>
+        </div>
+        <div class="formRow">  
+            <div class="labels"><label for="email" id="email-label"><span class="required">*</span>E-mail</label></div>
+            <div class="right-tab"><input type="email" name="email" placeholder="Enter your e-mail" id="email" required></div>
+        </div>
+        <div class="formRow">  
+            <div class="labels"><label for="age" id="number-label">Age</label></div>
+            <div class="right-tab"><input type="number" name="age" min="1" max="99" placeholder="Age" id="number"></div>
+        </div>
+        
+        <div class="formRow"> 
+            <div class="labels"><label for="interest">Your interest in Cormac McCarthy</label></div>
+            <div class="right-tab">
+                <select name="interest">
+                <option value="occassionalReader">Read a few novels</option>
+                <option value="avidReader">Read all novels</option>
+                <option value="devotedFan">Read everything and follow all news</option>
+                <option value="freetimeEnthusiast">Free-time enthusiast</option>
+                <option value="proEnthusiast">Professional enthusiast</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="formRow"> 
+            <div class="labels"><p>How many novels by Cormac McCarthy do you have at home?</p></div>
+            <div class="right-tab">
+                <ul>
+                    <li><input type="radio" id="noNovels" name="novelCount" value="None">
+                    <label for="noNovels">None</label></li>
+                    <li><input type="radio" id="1to5" name="novelCount" value="1-5">
+                    <label for="1to5">1-5</label></li>
+                    <li><input type="radio" id="5to9" name="novelCount" value="5-9">
+                    <label for="5to9">5-9</label></li>
+                    <li><input type="radio" id="all" name="novelCount" value="all">
+                    <label for="all">All</label></li>
+                </ul>     
+            </div>
+        </div>
+        
+        <div class="formRow">
+            <div class="labels"><label for="favouriteBook">Your book no.1:</label></div>
+            <div class="right-tab">
+                <select name="favouriteBook" id="dropdown">
+                    <option value="noCountry">No Country For Old Men</option>
+                    <option value="theRoad">The Road</option>
+                    <option value="allThePrettyHorses">All The Pretty Horses</option>
+                    <option value="bloodMeridean">The Blood Meridean</option>
+                    <option value="godChild">The Child of God</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="formRow"> 
+            <div class="labels"><p>What are the most memorable characters of McCarthy's novels?</p></div>
+            <div class="right-tab checkboxes">
+                <input type="checkbox" name="char1" value="Maryon Sylder" class="checkbox">Maryon Sylder<br>
+                <input type="checkbox" name="char1" value="Cula Holme" class="checkbox">Cula Holme<br>
+                <input type="checkbox" name="char1" value="John Grady Cole" class="checkbox">John Grady Cole<br>
+                <input type="checkbox" name="char1" value="Suttree" class="checkbox">Suttree<br>
+                <input type="checkbox" name="char1" value="Lester Ballard" class="checkbox">Lester Ballard<br>
+                <input type="checkbox" name="char1" value="Judge Holden" class="checkbox">Judge Holden<br>
+                <input type="checkbox" name="char1" value="Billy Parham" class="checkbox">Billy Parham<br>
+            </div>
+        </div>
+        
+        <div class="formRow"> 
+            <div class="labels"><p>Anything else you would like to tell us in order to organise the best meetup about Cormac McCarthy?</p></div>
+            <div class="right-tab"><textarea rows="4" cols="50" placeholder="Type your text here..." id="textarea"></textarea></div>
+        </div>
+
+        <input type="submit" value="Submit answers" id="submit">  
+    </form>
+  </div>
 </body>
 </html>
