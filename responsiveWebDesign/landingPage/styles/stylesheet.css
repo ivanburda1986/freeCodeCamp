@@ -1,47 +1,179 @@
-html{
-    background: white;
-  }
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body{
-    font-family: Roboto, Arial, sans-serif;
+  background: #eee;
+  font-family: Roboto, Arial, sans-serif;
 }
   
-  img {
+img {
       max-width: 100%;
       max-height: 100%;
   }
-  #header{
-    display: flex;
-    justify-content: space-around;
-  }
-  #logo{
-    border: 1px solid red;
-    margin: 0px 0px;
-    display: inline-block;
-  }
 
-  #nav-bar{
-    border: 1px solid red;
-    margin: 0px 0px;
-    display: inline-block;
+#header{
+  border: 1px solid #eee;
+  position: fixed;
+  top: 0;
+  min-height: 75px;
+  padding: 0px 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #eee;
 }
-  
-  #header-img {
-    width: 200px;
-    height: auto;
-  }
-  #emailSection{
-      display: block;
-  }
-  
-   .icon{
-    width: 80px;
-    height: auto;
-  }
-  .ul{
-  
-  }
-  
-  .nav-link{
-    list-style: none;
-    display: inline-block;
-  }
+
+#logo{
+  border: 1px solid #eee;
+  width: 60vw;
+}
+
+#header-img {
+  width: 200px;
+  height: auto;
+}
+
+#nav-bar{
+  border: 1px solid #eee;
+  width: 35vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+nav ul{
+  width: 35vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.nav-link{
+list-style: none;
+display: inline-block;
+}
+
+#emailSection{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 200px;
+  margin-top: 50px;
+}
+
+#form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#email{
+ margin: 20px 20px;
+ padding: 5px 5px;
+}
+
+#submit{
+  background-color: gold;
+  font-size: 0.8em;
+  padding: 6px 3px;
+
+}
+
+.icon{
+  width: 80px;
+  height: auto;
+}
+
+#conditions{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid{
+  display: flex;
+  flex-direction: row;
+  width: 70vw;
+}
+
+#conditions .icon{
+  width: 15vw;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#theBestGuitarDemo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+#candidatesPricing{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 50px 0 50px 0;
+}
+
+#candidatesPricing button{
+  background-color: gold;
+  font-size: 1em;
+  font-weight: 600;
+  padding: 10px 5px;
+}
+
+.guitarDetails{
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+.guitarDetails li{
+  padding: 5px 0;
+}
+
+.guitar{
+  border: 1px solid black;
+  width: 15vw;
+  padding-bottom: 15px;
+}
+
+.guitarTitle{
+  background: darkgray;
+  width: 100%;
+  font-size: 1.5em;
+  padding: 10px 0 10px 0;
+}
+
+.guitarPrice{
+  width: 100%;
+  font-size: 1.2em;
+  padding: 10px 0 10px 0;
+}
+
+#footer{
+  display: block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: lightgray;
+}
+
+#footer ul{
+  list-style: none; 
+}
