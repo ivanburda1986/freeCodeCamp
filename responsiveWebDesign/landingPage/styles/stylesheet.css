@@ -39,9 +39,6 @@ img {
 #nav-bar{
   border: 1px solid #eee;
   width: 35vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
 }
 
 nav ul{
@@ -53,7 +50,6 @@ nav ul{
 
 .nav-link{
 list-style: none;
-display: inline-block;
 }
 
 #emailSection{
@@ -71,12 +67,12 @@ display: inline-block;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
 }
 
 #email{
  margin: 20px 20px;
  padding: 5px 5px;
+ width: 20vw;
 }
 
 #submit{
@@ -87,7 +83,7 @@ display: inline-block;
 }
 
 .icon{
-  width: 80px;
+  width: 60px;
   height: auto;
 }
 
@@ -105,19 +101,17 @@ display: inline-block;
 }
 
 #conditions .icon{
-  width: 15vw;
-  height: 100px;
+  width: 12vw;
+  height: 80px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
 #theBestGuitarDemo{
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   margin-top: 30px;
   margin-bottom: 30px;
 }
@@ -167,13 +161,73 @@ display: inline-block;
 }
 
 #footer{
-  display: block;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
   background: lightgray;
+  padding-right: 30px;
 }
 
 #footer ul{
-  list-style: none; 
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
+
+#footer li{
+  padding: 20px 20px;
+}
+
+@media only screen  and (max-width : 650px) {
+  #email{
+    margin: 5px 5px;
+    padding: 5px 5px;
+    width: 40vw;
+   }
+
+   #form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #submit{
+    background-color: gold;
+    font-size: 0.8em;
+    padding: 4px 2px;
+  }
+  #emailSection {
+    height: 120px;
+    margin-top: 50px;
+}
+.grid{
+  display: flex;
+  flex-direction: row;
+  width: 90vw;
+}
+#conditions .icon{
+  width: 10vw;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+h2{
+  font-size: 1.2em;
+}
+
+#footer li{
+  padding: 10px 10px;
+}
+
+#candidatesPricing{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 20px 0 20px 0;
+}
+
+.guitar{
+  border: 1px solid black;
+  width: 30vw;
+  padding-bottom: 5px;
+}
+  }
