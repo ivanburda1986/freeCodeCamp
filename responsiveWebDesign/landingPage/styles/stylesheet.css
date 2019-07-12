@@ -1,0 +1,255 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: #eee;
+  font-family: Roboto, Arial, sans-serif;
+}
+  
+img {
+      max-width: 100%;
+      max-height: 100%;
+  }
+
+#header{
+  border: 1px solid #eee;
+  position: fixed;
+  top: 0;
+  min-height: 75px;
+  padding: 0px 20px;
+  width: 98vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #eee;
+}
+
+#logo{
+  border: 1px solid #eee;
+}
+
+#header-img {
+  width: 200px;
+  height: auto;
+}
+
+#nav-bar{
+  border: 1px solid #eee;
+  width: 35vw;
+}
+
+nav ul{
+  width: 35vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+a{
+  text-decoration: none;
+}
+ul{
+list-style: none;
+}
+
+#contact{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 200px;
+  margin-top: 50px;
+}
+
+#form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#email{
+ margin: 20px 20px;
+ padding: 5px 5px;
+ width: 20vw;
+}
+
+#submit{
+  background-color: gold;
+  font-size: 0.8em;
+  padding: 6px 3px;
+
+}
+
+.icon{
+  width: 60px;
+  height: auto;
+}
+
+#conditions{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: flex-start;
+  width: auto;
+  min-width: 650px;
+}
+
+#conditions .icon{
+  width: 80px;
+  height: auto;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+}
+
+#demo{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+#pricing{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 50px 0 50px 0;
+}
+
+#pricing button{
+  background-color: gold;
+  font-size: 1em;
+  font-weight: 600;
+  padding: 10px 5px;
+}
+
+.guitarDetails{
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+.guitarDetails li{
+  padding: 5px 0;
+}
+
+.guitar{
+  border: 1px solid black;
+  width: 15vw;
+  padding-bottom: 15px;
+}
+
+.guitarTitle{
+  background: darkgray;
+  width: 100%;
+  font-size: 1.5em;
+  padding: 10px 0 10px 0;
+}
+
+.guitarPrice{
+  width: 100%;
+  font-size: 1.2em;
+  padding: 10px 0 10px 0;
+}
+
+#footer{
+  background: lightgray;
+  padding-right: 30px;
+}
+
+#footer ul{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+#footer li{
+  padding: 20px 20px;
+}
+
+@media only screen  and (max-width : 650px) {
+
+  #header{
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  #email{
+    margin: 5px 5px;
+    padding: 5px 5px;
+    width: 40vw;
+   }
+
+   #form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #submit{
+    background-color: gold;
+    font-size: 0.8em;
+    padding: 4px 2px;
+  }
+  #contact {
+    height: 120px;
+    margin-top: 50px;
+}
+.grid{
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 10px;
+  width: auto;
+  min-width: 0px;
+}
+#conditions .icon{
+  width: 10vw;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+h2{
+  font-size: 1.2em;
+}
+
+#footer li{
+  padding: 10px 10px;
+}
+
+#pricing{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 20px 0 20px 0;
+}
+
+.guitar{
+  border: 1px solid black;
+  width: 30vw;
+  padding-bottom: 5px;
+}
+  }
+
+
+@media only screen  and (max-width : 450px) {
+  .img{
+    display: none;
+    margin: 0 auto;
+  }
+  }
