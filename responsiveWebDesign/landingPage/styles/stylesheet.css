@@ -20,7 +20,9 @@ img {
   top: 0;
   min-height: 75px;
   padding: 0px 20px;
+  width: 98vw;
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
   align-items: center;
   background-color: #eee;
@@ -28,7 +30,6 @@ img {
 
 #logo{
   border: 1px solid #eee;
-  width: 60vw;
 }
 
 #header-img {
@@ -47,12 +48,14 @@ nav ul{
   flex-direction: row;
   justify-content: space-around;
 }
-
-.nav-link{
+a{
+  text-decoration: none;
+}
+ul{
 list-style: none;
 }
 
-#emailSection{
+#contact{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -97,17 +100,21 @@ list-style: none;
 .grid{
   display: flex;
   flex-direction: row;
-  width: 70vw;
+  justify-content: flex-start;
+  align-content: flex-start;
+  width: auto;
+  min-width: 650px;
 }
 
 #conditions .icon{
-  width: 12vw;
-  height: 80px;
+  width: 80px;
+  height: auto;
+  margin-right: 20px;
   display: flex;
   align-items: center;
 }
 
-#theBestGuitarDemo{
+#demo{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -116,7 +123,7 @@ list-style: none;
   margin-bottom: 30px;
 }
 
-#candidatesPricing{
+#pricing{
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -125,7 +132,7 @@ list-style: none;
   margin: 50px 0 50px 0;
 }
 
-#candidatesPricing button{
+#pricing button{
   background-color: gold;
   font-size: 1em;
   font-weight: 600;
@@ -177,6 +184,11 @@ list-style: none;
 }
 
 @media only screen  and (max-width : 650px) {
+
+  #header{
+    flex-direction: column;
+    justify-content: space-around;
+  }
   #email{
     margin: 5px 5px;
     padding: 5px 5px;
@@ -195,14 +207,16 @@ list-style: none;
     font-size: 0.8em;
     padding: 4px 2px;
   }
-  #emailSection {
+  #contact {
     height: 120px;
     margin-top: 50px;
 }
 .grid{
   display: flex;
   flex-direction: row;
-  width: 90vw;
+  padding-bottom: 10px;
+  width: auto;
+  min-width: 0px;
 }
 #conditions .icon{
   width: 10vw;
@@ -218,7 +232,7 @@ h2{
   padding: 10px 10px;
 }
 
-#candidatesPricing{
+#pricing{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -230,4 +244,12 @@ h2{
   width: 30vw;
   padding-bottom: 5px;
 }
+  }
+
+
+@media only screen  and (max-width : 450px) {
+  .img{
+    display: none;
+    margin: 0 auto;
+  }
   }
