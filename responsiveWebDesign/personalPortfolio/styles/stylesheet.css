@@ -17,6 +17,10 @@
 }
 
 /*Navigation styling*/
+#navbar{
+    position: fixed;
+}
+
 ul{
     list-style: none;
 }
@@ -24,7 +28,7 @@ ul{
 .nav{
     background-color: var(--main-red);
     width: 100vw;
-    padding-right: 20px;
+    padding-right: 2em;
 }
 
 #navbar ul{
@@ -34,11 +38,11 @@ ul{
 }
 
 #navbar a{
-    display: inline-block;  
+    display: inline-block;
     text-decoration: none;
     color: white;
     font-size: 1.5em;
-    padding: 20px 10px;
+    padding: 1em 2em;
 }
 
 #navbar a:hover{
@@ -69,15 +73,18 @@ ul{
 
 /*Project section styling*/
 #projects{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: var(--main-blue);
-    text-align: center;
     padding-top: 5em;
     padding-bottom: 4em;
-    padding-left: 2em;
-    padding-right: 2em;
+
 }
 
 #project-section-header{
+    display: flex;
+    justify-content: center;
     font-size: 2em;
     text-decoration-line: underline;
     color: var(--main-white);
@@ -87,20 +94,23 @@ ul{
 #project-section-gallery{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    grid-column-gap: 2em;
-    grid-row-gap: 2em;
-    /* or grid-gap: 1em */
-    margin-bottom: 2em;
+    grid-gap: 4rem;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-bottom: 4rem;
 }
 
 .project-tile{
-    width: auto;
-    height: 40vw;
     background-color: var(--main-white);
 }
 
+#showAllButton{
+    display: flex;
+    justify-content: center;
+}
+
 #showAllButton a{
-    display: inline-block;
     background-color: var(--main-gray);
     text-decoration: none;
     color: white;
@@ -111,13 +121,39 @@ ul{
 /*Contact section styling*/
 #contact{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     height: 100vh;
     background-color: var(--main-gray);
 }
+
+#contact h1{
+    font-size: 4em;
+    color: var(--main-white);
+}
+
+#contact h2{
+    font-size: 2em;
+    font-style: italic;
+    color: var(--main-white);
+}
+#contact ul{
+    padding-top: 3em;
+    display: flex;
+    flex-direction: row;
+}
+
+.contact-link{
+    text-decoration: none;
+    color: white;
+    font-size: 1.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+
 
 
 
