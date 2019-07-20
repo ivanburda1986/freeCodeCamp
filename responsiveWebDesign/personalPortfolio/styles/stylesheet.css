@@ -11,7 +11,15 @@
     box-sizing: border-box;
   }
 
-  body{
+a{
+    text-decoration: none;
+
+}
+a:visited{
+    text-decoration: none;
+}
+
+body {
     display: flex;
     flex-direction: column;
 }
@@ -79,7 +87,7 @@ ul{
     background-color: var(--main-blue);
     padding-top: 5em;
     padding-bottom: 4em;
-
+    height: 100vh;
 }
 
 #project-section-header{
@@ -102,21 +110,71 @@ ul{
 }
 
 .project-tile{
-    background-color: var(--main-white);
+    background-color: var(--main-blue);
+    height: 100%;
+    width: 100%;
 }
+
+.project-tile img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.project-tile-footer{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    margin-top: -5px;
+    background-color: var(--main-gray);
+    color: var(--main-white);
+    text-align: center;
+    text-decoration: none;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+    
+}
+
+.project-tile-footer p{
+    margin: auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.project-tile-footer:hover{
+    color: orange;
+}
+
 
 #showAllButton{
     display: flex;
     justify-content: center;
+    justify-self: center;
+    margin: auto;
+    width: 200px;
+    background-color: var(--main-gray);
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
 }
 
 #showAllButton a{
-    background-color: var(--main-gray);
+    
     text-decoration: none;
     color: white;
     font-size: 1.2em;
     padding: 1em 2em;
 }
+
+#showAllButton i {
+    margin-left: 10px;
+}
+
+#showAllButton:hover{
+    background-color: var(--main-red);
+}
+
 
 /*Contact section styling*/
 #contact{
@@ -147,17 +205,30 @@ ul{
 
 .contact-link{
     text-decoration: none;
-    color: white;
+    color: var(--main-white);
     font-size: 1.5em;
-    padding-left: 1em;
-    padding-right: 1em;
+    padding: 1em 1em;
+    margin: 0;
+    text-shadow: 2px 2px 1px black;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+
+}
+
+.fas, .fab{
+    padding-right: 8px;
+}
+
+.contact-link:hover {
+    top: 15px;
 }
 
 
-
-
-
-/*Contact section styling*/
+/*Footer section styling*/
 footer{
     display: flex;
     flex-direction: row;
