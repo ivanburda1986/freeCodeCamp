@@ -1,0 +1,37 @@
+           <div class="project-tile">
+                <a href="https://codepen.io/ivanek1986/project/editor/ZJbrWk" title="A survey form as an input for organizing a Cormac McCarthy get-together" target="_blank">
+                  <img src="http://williamwickey.com/wp-content/uploads/2017/09/FullSizeRender-1.jpg" alt="A stack of McCarthys novels">
+                  <div class="project-tile-footer"><p>Survey form</p></div>
+                </a>
+            </div>
+
+            <div class="project-tile">
+                <a href="https://codepen.io/ivanek1986/project/editor/ZJbrWk" title="A landing page related to my electric-guitar options and goals" target="_blank">
+                  <img src="https://i.ebayimg.com/00/s/MTAyNFg3Njg=/z/iHgAAOSwFfJcokkm/$_86.JPG" alt="A detail of the Yamaha Pacifica 611 Guitar">
+                  <div class="project-tile-footer"><p>Landing page</p></div>
+                </a>
+            </div>
+
+            <div class="project-tile">
+                <a href="https://codepen.io/ivanek1986/project/editor/ZJbrWk" title="projectTitle" title="A brief documentation of Javascript" target="_blank">
+                  <img src="https://www.javascriptandfriends.com/static/main_banner-5e177af0d0415a95e45a7f9b3d8b4077.jpg" alt="A laptop image screen showing a chunk of JS code">
+                  <div class="project-tile-footer"><p>Technical documentation</p></div>
+                </a>
+            </div>
+
+            <div class="project-tile">
+                <a href="https://www.freecodecamp.org/" title="FreeCodeCamp landing page" target="_blank">
+                  <img src="https://s3.amazonaws.com/freecodecamp/curriculum-diagram-full.jpg" alt="FreeCodeCamp white logo on the greed background">
+                  <div class="project-tile-footer"><p>FreeCodeCamp</p></div>
+                </a>
+            </div>
+
+            <div class="project-tile">
+                <a href="https://www.w3.org/" title="The W3C Web">
+                  <img src="https://www.seoliquido.com/wp-content/uploads/2018/06/w3c-validation.jpg" alt="A person in front of the PC viewed from the back with W3C related icons around." target="_blank">
+                  <div class="project-tile-footer"><p>W3C Standards</p></div>
+                </a>
+            </div>
+          </div>
+
+          <a href="https://codepen.io/ivanek1986/project/editor/ZJbrWk" title="My Codepen.io page" id="showAllButton">Show all</a>  
