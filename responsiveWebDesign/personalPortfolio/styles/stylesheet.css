@@ -44,7 +44,7 @@ ul{
 
 .nav{
     background-color: var(--main-red);
-    width: 100vw;
+    width: 100%;
     padding-right: 2em;
 }
 
