@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles/stylesheet.css">
+    <script src="https://kit.fontawesome.com/4b83083c38.js"></script>
     <title>Personal Portfolio</title>
   </head>
   <body>
     <div id="navbar" class="nav">
       <ul>
-        <li><a href="#" class="navlink">About</a></li>
-        <li><a href="#" class="navlink">Work</a></li>
-        <li><a href="#" class="navlink">Contact</a></li>
+        <li><a href="#welcome-section" class="navlink">About</a></li>
+        <li><a href="#projects" class="navlink">Work</a></li>
+        <li><a href="#contact" class="navlink">Contact</a></li>
       </ul>
     </div>
     
@@ -20,62 +21,57 @@
       <section id="welcome-section">
         <header id="welcome-section-header">
           <h1>Ivan Burda</h1>
-          <h2>a web developer</h2>
+          <h2>an aspiring web developer</h2>
         </header>
       </section>
+
       <section id="projects">
         <header id="project-section-header"><h1>My projects</h1></header>
         <div id="project-section-gallery">
-          <div class="project-tile">
-            <a href="" title="projectTitle">
-              <img src="" alt="imageDescription">
-              <div class="project-tile-footer">Project title</div>
+            <a href="http://ivanburda.com/dev/freeCodeCamp/tributePage" title="A tribute page on Cormac McCarthy - an american novelist" target="_blank" class="project-tile">
+              <img src="https://media.vanityfair.com/photos/57ae104721b609ea061ceff2/16:9/w_1280%2Cc_limit/cormac-mccarthy-no-country-for-old-men-literary-star.jpg" alt="Cormac McCarthy with trees in the background" class="project-image">
+              <p class="project-tile">Tribute page</p>
             </a>
-          </div>
-          <div class="project-tile">
-            <a href="" title="projectTitle">
-              <img src="" alt="imageDescription">
-              <div class="project-tile-footer">Project title</div>
+
+            <a href="http://ivanburda.com/dev/freeCodeCamp/surveyForm" title="A survey form as an input for organizing a Cormac McCarthy get-together" target="_blank" class="project-tile">
+              <img src="http://williamwickey.com/wp-content/uploads/2017/09/FullSizeRender-1.jpg" alt="A stack of McCarthys novels" class="project-image">
+              <p class="project-tile">Survey form</p>
             </a>
-          </div>
-          <div class="project-tile">
-            <a href="" title="projectTitle">
-              <img src="" alt="imageDescription">
-              <div class="project-tile-footer">Project title</div>
+
+            <a href="http://ivanburda.com/dev/freeCodeCamp/landingPage" title="A landing page related to my electric-guitar options and goals" target="_blank" class="project-tile">
+              <img src="https://i.ebayimg.com/00/s/MTAyNFg3Njg=/z/iHgAAOSwFfJcokkm/$_86.JPG" alt="A detail of the Yamaha Pacifica 611 Guitar" class="project-image">
+              <p class="project-tile">Landing page</p>
             </a>
-          </div>
-          <div class="project-tile">
-            <a href="" title="projectTitle">
-              <img src="" alt="imageDescription">
-              <div class="project-tile-footer">Project title</div>
+
+            <a href="http://ivanburda.com/dev/freeCodeCamp/technicalDocumentation" title="A brief documentation of Javascript" target="_blank" class="project-tile">
+              <img src="https://www.javascriptandfriends.com/static/main_banner-5e177af0d0415a95e45a7f9b3d8b4077.jpg" alt="A laptop image screen showing a chunk of JS code" class="project-image">
+              <p class="project-tile">Technical documentation</p>
             </a>
-          </div>
-          <div class="project-tile">
-            <a href="" title="projectTitle">
-              <img src="" alt="imageDescription">
-              <div class="project-tile-footer">Project title</div>
+
+            <a href="https://www.freecodecamp.org/" title="FreeCodeCamp landing page" target="_blank" class="project-tile">
+              <img src="https://s3.amazonaws.com/freecodecamp/curriculum-diagram-full.jpg" alt="FreeCodeCamp white logo on the greed background" class="project-image">
+              <p class="project-tile">FreeCodeCamp</p>
             </a>
-          </div>
-          <div class="project-tile">
-            <a href="" title="projectTitle">
-              <img src="" alt="imageDescription">
-              <div class="project-tile-footer">Project title</div>
-            </a>
-          </div>
-        </div>
-        <div id="showAllButton"><a href="" title="">Show all</a></div>
+
+            <a href="https://www.w3.org/" title="The W3C" target="_blank" class="project-tile">
+              <img src="https://www.seoliquido.com/wp-content/uploads/2018/06/w3c-validation.jpg" alt="A person in front of the PC viewed from the back with W3C related icons around." class="project-image">
+              <p class="project-tile">The W3C</p>
+            </a>                                                
+        </div>      
+        <a href="https://codepen.io/ivanek1986/pens/public/" title="My Codepen.io page" id="showAllButton">Show all</a> 
       </section>
+      
       <section id="contact">
         <header id="contact-section-header">
-          <h1>Let's work together</h1>
-          <h2>How do you take your coffee?</h2>
+          <h1>Let's get in touch</h1>
+          <h2>And do something great together</h2>
         </header>
         <div>
           <ul>
-            <li><a href="#" title="a link to my LinkedIn profile" class="contact-link">LinkedIn</a></li>
-            <li><a href="#" title="a link to my github profile" class="contact-link">Github</a></li>
-            <li><a href="#" title="send me an email" class="contact-link">E-mail</a></li>
-            <li><a href="#" title="a link to my webpage" class="contact-link">Web</a></li>
+            <li><a href="https://www.linkedin.com/in/ivan-burda-08337335/" title="a link to my LinkedIn profile" class="contact-link" target="_blank"><i class="fab fa-linkedin-in"></i>LinkedIn</a></li>
+            <li><a href="https://github.com/ivanburda1986/freeCodeCamp" title="a link to my github profile" class="contact-link" id="profile-link" target="_blank"><i class="fab fa-github"></i>Github</a></li>
+            <li><a href="mailto:burda.ivan@gmail.com" title="send me an email" class="contact-link"><i class="fas fa-at"></i>E-mail</a></li>
+            <li><a href="http://ivanburda.com/" title="a link to my webpage" class="contact-link" target="_blank"><i class="fas fa-blog"></i>Web</a></li>
           </ul>
         </div>
       </section>      
@@ -83,7 +79,7 @@
     </main>
     
     <footer>
-      <p>Some footer information here.</p>
+      <p>This is my portfolio of the Responsive Web Design projects from the FreeCodeCamp.</p>
       <p>Ivan Burda</p>
     </footer>
   </body>
