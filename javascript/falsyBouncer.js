@@ -3,12 +3,12 @@ function bouncer(arr) {
     const falsies = [false, null, 0, "", undefined, NaN];
     for (let i = 0; i < arr.length; i += 1){
         for (let j = 0; j < falsies.length; j += 1){
-            if (values[i] === falsies[j]){
+            if (!values[i]){
                 values.splice(i, 1);
             }
         }
     }
-    console.log (values);
+    return (values);
   }
   
   bouncer([7, "ate", "", false, 9]); //should return [7, "ate", 9].
