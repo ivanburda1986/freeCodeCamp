@@ -1,7 +1,7 @@
 function destroyer(...arr) {
     let shootingRange = arr.slice(0, 1).flat();
     let bullets = arr.slice(1);
-    return(shootingRange.filter(item => bullets.indexOf(item)===-1));
+    return(shootingRange.filter(item => !bullets.includes(item)));
   }
 
 destroyer(["tree", "hamburger", 53], "tree", 53) // should return ["hamburger"].
