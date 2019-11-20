@@ -1,14 +1,12 @@
-const filtering = (objekt) => {
-    if
-}
 
 function whatIsInAName(collection, source) {
-    // What's in a name?
-    var arr = [...collection];
-    // Only change code below this line
-    console.log(arr.filter(filtering));
-
-    // Only change code above this line
+  let matching = [];
+  for (let i = 0; i < collection.length; i += 1) {
+    if (Object.entries(source).every(([key, value]) => (collection[i].hasOwnProperty(key) && collection[i][key] === value))) {
+      matching.push(collection[i]);
+    }
   }
+  return(matching);
+}
 
-  whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
+whatIsInAName([{ first: 'Romeo', last: 'Montague' }, { first: 'Mercutio', last: null }, { first: 'Tybalt', last: 'Capulet' }], { last: 'Capulet' });
