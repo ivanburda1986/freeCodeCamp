@@ -8,13 +8,11 @@ const isWord = (callback) => {
 
 const normalize = (string) => {
   const stringChars = string.split('');
-    stringChars.forEach(
-        item => {
-            if (item === item.toUpperCase()){
-                stringChars.splice(item, 0, " ");
-            }
+    stringChars.forEach(element => {
+        if(element === element.toUpperCase()){
+           stringChars.splice(stringChars.indexOf(element), 0, "");
         }
-    )
+    })
     console.log(stringChars);
 };
 
