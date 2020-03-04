@@ -17,7 +17,7 @@ function diffArray(arr1, arr2) {
       newArr.push(arr2[i]);
     }
   }
-  return (newArr);
+  console.log (newArr);
 }
 
 
