@@ -14,6 +14,7 @@ function sumFibs(num) {
       }
     });
     fnums.pop();
+
     function getSum(total, num) {
       return total + num;
     }
