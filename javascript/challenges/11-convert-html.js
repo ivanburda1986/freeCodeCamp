@@ -22,3 +22,7 @@ convertHTML('Stuff in "quotation marks"');
 convertHTML("Schindler's List");
 convertHTML("<>");
 convertHTML("abc");
+
+//Further reading on replacing in JS
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll
+// https://dmitripavlutin.com/replace-all-string-occurrences-javascript/
