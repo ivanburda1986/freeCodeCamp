@@ -19,11 +19,17 @@ function getBetweeners() {
 
 
 function optimiseArrays() {
-  if (arg1Multiples.length > 3) {
-    arg1Multiples.splice(1, arg1Multiples.indexOf(arg1Multiples.length - 2));
+  if (arg1Multiples.length > 2) {
+    arg1Multiples = [arg1Multiples[0], arg1Multiples[arg1Multiples.length - 1]];
+    //arg1Multiples.splice(1, arg1Multiples.indexOf(arg1Multiples.length - 2));
   }
-  if (arg2Multiples.length > 3) {
-    arg2Multiples.splice(1, arg2Multiples.indexOf(arg2Multiples.length - 2));
+  if (arg2Multiples.length > 2) {
+    arg2Multiples = [arg2Multiples[0], arg2Multiples[arg2Multiples.length - 1]];
+    //arg2Multiples.splice(1, arg2Multiples.indexOf(arg2Multiples.length - 2));
+  }
+  if (commonMultiples.length > 5) {
+    commonMultiples = [commonMultiples[0], commonMultiples[commonMultiples.length - 1]];
+    //arg2Multiples.splice(1, arg2Multiples.indexOf(arg2Multiples.length - 2));
   }
 }
 
@@ -54,7 +60,7 @@ function isDivisibleByBetweeners() {
 
 
 function getNextCommonMultiple() {
-
+  optimiseArrays()
   if (arg1Multiples[arg1Multiples.length - 1] < arg2Multiples[arg2Multiples.length - 1]) {
     arg1NextMultiple();
     getNextCommonMultiple();
@@ -64,9 +70,7 @@ function getNextCommonMultiple() {
   } else if (arg1Multiples[arg1Multiples.length - 1] === arg2Multiples[arg2Multiples.length - 1]) {
     commonMultiples.push(arg1Multiples[arg1Multiples.length - 1]);
     isDivisibleByBetweeners();
-
   }
-
 }
 
 
@@ -77,4 +81,4 @@ function smallestCommons(arr) {
 }
 
 
-smallestCommons([1, 10]);
+smallestCommons([1, 11]);
