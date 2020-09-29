@@ -62,10 +62,10 @@ function getNextCommonMultiple() {
   optimiseArrays();
   if (arg1Multiples[arg1Multiples.length - 1] < arg2Multiples[arg2Multiples.length - 1]) {
     arg1NextMultiple();
-    // getNextCommonMultiple();
+    getNextCommonMultiple();
   } else if (arg1Multiples[arg1Multiples.length - 1] > arg2Multiples[arg2Multiples.length - 1]) {
     arg2NextMultiple();
-    // getNextCommonMultiple();
+    getNextCommonMultiple();
   } else if (arg1Multiples[arg1Multiples.length - 1] === arg2Multiples[arg2Multiples.length - 1]) {
     commonMultiples.push(arg1Multiples[arg1Multiples.length - 1]);
     isDivisibleByBetweeners();
