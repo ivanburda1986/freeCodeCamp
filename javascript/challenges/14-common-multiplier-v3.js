@@ -19,5 +19,4 @@ function smallestCommons(arr) {
     }
   }
 }
-
-console.log(smallestCommons([1, 5]));
+console.log(smallestCommons([1, 13]));
