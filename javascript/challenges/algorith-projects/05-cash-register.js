@@ -8,6 +8,8 @@ function checkCashRegister(price, cash, cid) {
   }
   let registerBalance = countRegisterBalance(cid);
   //Calculates the register balance
+
+
   function returnChange(howMuchToReturn) {
     let amountToBeReturned = [0];
     let whatToBeReturned = [];
@@ -68,10 +70,11 @@ function checkCashRegister(price, cash, cid) {
           whatToBeReturned.push(howMuchOfWhatToPush().whatToPush);
         }
       }
+
       return;
     });
-    console.log("Amount to be returned " + amountToBeReturned);
-    amountToBeReturned.shift();
+    console.log("Amount to be returned" + amountToBeReturned);
+    amountToBeReturned.splice(0, 1);
     console.log("Amount to be returned " + amountToBeReturned);
 
     return {
