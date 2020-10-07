@@ -13,16 +13,18 @@ function checkCashRegister(price, cash, cid) {
     let registerFromHighest = cid.reverse();
     const dividers = [100, 20, 10, 5, 1, 0.25, 0.1, 0.5, 0.01];
 
+    function sumToBeReturned() {
+      return toBeReturned.reduce((sum, nextAmount) => {
+        return sum + nextAmount;
+      });
+    }
+
     //Go through the available money units and use them to pay out from highest to lowest until the return sum is reached
     dividers.forEach((divider) => {
       //As long as the sum of money already put aside for the payout is lower then the return sum, keep adding
-      if (
-        toBeReturned.reduce((sum, nextAmount) => {
-          return sum + nextAmount;
-        }) < howMuchToReturn
-      ) {
+      if (sumToBeReturned() < howMuchToReturn) {
         if (parseInt(howMuchToReturn / divider) > 0) {
-          toBeReturned.push(registerFromHighest[dividers.indexOf(divider)][1]);
+          toBeReturned.push(registerFromHighest[dividers.indexOf(divider)][1]); //55 / parseInt((howMuchToReturn-sumToBeReturned())/divider)*divider
         }
       }
     });
@@ -48,7 +50,7 @@ function checkCashRegister(price, cash, cid) {
 }
 
 console.log(
-  checkCashRegister(10, 200, [
+  checkCashRegister(9.75, 200, [
     ["PENNY", 1.01],
     ["NICKEL", 2.05],
     ["DIME", 3.1],
