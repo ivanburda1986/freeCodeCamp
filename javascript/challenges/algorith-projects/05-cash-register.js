@@ -69,6 +69,7 @@ function checkCashRegister(price, cash, cid) {
           console.log("Amount to be returned " + amountToBeReturned);
           whatToBeReturned.push(howMuchOfWhatToPush().whatToPush);
         }
+
       }
 
       return;
