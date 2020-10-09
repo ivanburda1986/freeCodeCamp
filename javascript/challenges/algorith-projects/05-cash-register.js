@@ -11,24 +11,24 @@ function checkCashRegister(price, cash, cid) {
 
 
   function returnChange(howMuchToReturn) {
-    let amountToBeReturned = [];
-    let whatToBeReturned = [];
+    let individualChangeAmountsToBeReturned = [];
+    let individualChangeNamesToBeReturned = [];
     let registerFromHighest = cid.reverse();
     const dividers = [100, 20, 10, 5, 1, 0.25, 0.1, 0.05, 0.01];
     const dividerNames = ["ONE HUNDRED", "TWENTY", "TEN", "FIVE", "ONE", "QUARTER", "DIME", "NICKEL", "PENNY"];
 
     function sumToBeReturned() {
-      if (amountToBeReturned.length === 0) {
+      if (individualChangeAmountsToBeReturned.length === 0) {
         return 0;
       } else {
-        return amountToBeReturned.reduce((sum, nextAmount) => {
+        return individualChangeAmountsToBeReturned.reduce((sum, nextAmount) => {
           return sum + nextAmount;
         });
       }
 
     }
     //Go through the available money units and use them to pay out from highest to lowest until the return sum is reached
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i <= 9; i++) {
       console.log("sumcheck:" + parseInt(0.04 / 0.05));
       if (parseInt((howMuchToReturn - sumToBeReturned()) / dividers[i]) >= 0) {
         console.log("Divider " + dividers[i]);
@@ -42,11 +42,11 @@ function checkCashRegister(price, cash, cid) {
           console.log("Remaining to pay " + remaining);
 
           let remainingMultiples = parseInt(remaining / dividers[i]); //1
-          console.log("Remaining to pay multiples of the divider (" + dividers[i] + "):" + remainingMultiples);
+          //console.log("Remaining to pay multiples of the divider (" + dividers[i] + "):" + remainingMultiples);
           let available = registerFromHighest[dividers.indexOf(dividers[i])][1];
-          console.log("Available of the divider (" + dividers[i] + "):" + available);
+          //console.log("Available of the divider (" + dividers[i] + "):" + available);
           let availableMultiples = parseInt(available / dividers[i]); //11
-          console.log("Available to pay multiples of the divider (" + dividers[i] + "):" + availableMultiples);
+         // console.log("Available to pay multiples of the divider (" + dividers[i] + "):" + availableMultiples);
 
           if (availableMultiples >= 0) {
             console.log(availableMultiples);
@@ -72,10 +72,10 @@ function checkCashRegister(price, cash, cid) {
           };
 
         }
-        console.log("Amount to be returned " + amountToBeReturned);
-        amountToBeReturned.push(howMuchOfWhatToPush().amountToPush);
-        console.log("Amount to be returned " + amountToBeReturned);
-        whatToBeReturned.push(howMuchOfWhatToPush().whatToPush);
+        console.log("Amount to be returned " + individualChangeAmountsToBeReturned);
+        individualChangeAmountsToBeReturned.push(howMuchOfWhatToPush().amountToPush);
+        console.log("Amount to be returned " + individualChangeAmountsToBeReturned);
+        individualChangeNamesToBeReturned.push(howMuchOfWhatToPush().whatToPush);
 
       } else {
         return;
@@ -84,12 +84,12 @@ function checkCashRegister(price, cash, cid) {
 
     }
 
-    console.log("Amount to be returnedd" + amountToBeReturned);
-    console.log("Amount to be returned " + amountToBeReturned);
+    console.log("Amount to be returnedd" + individualChangeAmountsToBeReturned);
+    console.log("Amount to be returned " + individualChangeAmountsToBeReturned);
 
     return {
-      amountToBeReturned: amountToBeReturned,
-      whatToBeReturned: whatToBeReturned
+      individualChangeAmountsToBeReturned: individualChangeAmountsToBeReturned,
+      individualChangeNamesToBeReturned: individualChangeNamesToBeReturned
     };
   }
 
@@ -114,12 +114,12 @@ function checkCashRegister(price, cash, cid) {
 
     //--The available money bills/coins doesnt allow to return the needed amount
     if (
-      returnChange(cash - price).amountToBeReturned.reduce((sum, nextAmount) => {
+      returnChange(cash - price).individualChangeAmountsToBeReturned.reduce((sum, nextAmount) => {
         return sum + nextAmount;
       }) <
       cash - price
     ) {
-      //console.log(returnChange(cash - price).amountToBeReturned);
+      //console.log(returnChange(cash - price).individualChangeAmountsToBeReturned);
       return {
         status: "INSUFFICIENT_FUNDS",
         change: []
@@ -127,8 +127,8 @@ function checkCashRegister(price, cash, cid) {
     } else {
       let finalChangeArrays = []
       let returnedChange = returnChange(cash - price);
-      for (let i = 0; i < returnedChange.whatToBeReturned.length; i++) {
-        finalChangeArrays.push([returnedChange.whatToBeReturned[i], returnedChange.amountToBeReturned[i]]);
+      for (let i = 0; i < returnedChange.individualChangeNamesToBeReturned.length; i++) {
+        finalChangeArrays.push([returnedChange.individualChangeNamesToBeReturned[i], returnedChange.individualChangeAmountsToBeReturned[i]]);
       }
       console.log(finalChangeArrays);
       return {
