@@ -6,7 +6,8 @@ function checkCashRegister(price, cash, cid) {
   const dividers = [100, 20, 10, 5, 1, 0.25, 0.1, 0.05, 0.01];
   const dividerNames = ["ONE HUNDRED", "TWENTY", "TEN", "FIVE", "ONE", "QUARTER", "DIME", "NICKEL", "PENNY"];
 
-  let result;
+  //The final result to be returned
+  let checkCashRegisterResult;
 
   //Calculate total money available in the register
   function countRegisterBalance(cid) {
@@ -14,12 +15,14 @@ function checkCashRegister(price, cash, cid) {
     cid.forEach((drawer) => {
       total = total + drawer[1];
     });
-    console.log("Total register balance: " + Number(parseFloat(total).toFixed(2)));
+    // console.log("Total register balance: " + Number(parseFloat(total).toFixed(2)));
     return Number(parseFloat(total).toFixed(2));
   }
   let registerBalance = countRegisterBalance(cid);
 
-  //RETURN AVAILABLE COINS AND BILLS UP TO THE AMOUNT THAT SHOULD BE RETURNED
+
+  //GIVE ME AVAILABLE COINS AND BILLS UP TO THE AMOUNT THAT SHOULD BE RETURNED
+  //Variables for holding data that will be returned
   let individualChangeAmountsToBeReturned = [];
   let individualChangeNamesToBeReturned = [];
 
@@ -78,15 +81,15 @@ function checkCashRegister(price, cash, cid) {
       individualChangeAmountsToBeReturned: individualChangeAmountsToBeReturned,
       individualChangeNamesToBeReturned: individualChangeNamesToBeReturned
     };
-    console.log("Individual register-amount usage: " + usageOfIndividualRegisterAmounts.individualChangeAmountsToBeReturned);
-    console.log("Individual register-amount usage: " + usageOfIndividualRegisterAmounts.individualChangeNamesToBeReturned);
+    // console.log("Individual register-amount usage: " + usageOfIndividualRegisterAmounts.individualChangeAmountsToBeReturned);
+    // console.log("Individual register-amount usage: " + usageOfIndividualRegisterAmounts.individualChangeNamesToBeReturned);
     getEvaluation(usageOfIndividualRegisterAmounts);
   }
 
   //Evaluate the result
   function getEvaluation(returnChangeOutput) {
-    console.log("Final evaluation received:");
-    console.log(returnChangeOutput);
+    // console.log("Final evaluation received:");
+    // console.log(returnChangeOutput);
     let evaluation;
 
     //1] If there is not enough money in the regiser to return
@@ -136,10 +139,11 @@ function checkCashRegister(price, cash, cid) {
     return result = evaluation;
   }
 
-  //Triggers the fist function to which other functions are chained. The oucome of the chain is a result.
+  //Triggers the fist function to which other functions are chained. The oucome of the chain is a value set to the "checkCashRegisterResult" variable.
   individualRegisterAmountsUsage();
 
-  return result;
+  //Return the final result
+  return checkCashRegisterResult;
 
 }
 
