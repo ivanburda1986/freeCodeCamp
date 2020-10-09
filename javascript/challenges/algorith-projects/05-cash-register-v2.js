@@ -13,6 +13,8 @@ function countRegisterBalance(cid) {
   return Number(parseFloat(total).toFixed(2));
 }
 
+
+
 //Return change
 function returnChange(howMuchToReturn) {
   let amountToBeReturned = [0];
@@ -28,10 +30,35 @@ function returnChange(howMuchToReturn) {
   }
 
   //Go through the available money units and use them to pay out from highest to lowest until the return sum is reached
+  let allCashReturned = false;
+  let i = 0;
 
-  console.log("Amount to be returned" + amountToBeReturned);
+  function evalChangeRecursive(){
+    if(allCashReturned === false){
+      if (parseInt((howMuchToReturn - sumToBeReturned()) / dividers[i]) > 0) {
+
+      } else{
+
+      }
+
+
+
+      evalChangeRecursive();
+    }
+    else{
+      console.log("All cash returned")
+    }
+
+
+  }
+
+
+
+
+
+
   amountToBeReturned.splice(0, 1);
-  console.log("Amount to be returned " + amountToBeReturned);
+  console.log("Amount to be returned" + amountToBeReturned);
 
   return {
     amountToBeReturned: amountToBeReturned,
@@ -39,10 +66,12 @@ function returnChange(howMuchToReturn) {
   };
 }
 
-
+//=====MAIN FUNCTION=======
 function checkCashRegister(price, cash, cid) {
-  registerBalance = countRegisterBalance(cid);
+  //Assign the global variables
+  availableCash = cid;
   howMuchToReturn = cash - price;
+  registerBalance = countRegisterBalance(cid);
 
 
   //If there is not enough money in the regiser to return
