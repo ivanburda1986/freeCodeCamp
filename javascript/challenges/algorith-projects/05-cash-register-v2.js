@@ -6,12 +6,15 @@ function checkCashRegister(price, cash, cid) {
   const dividers = [100, 20, 10, 5, 1, 0.25, 0.1, 0.05, 0.01];
   const dividerNames = ["ONE HUNDRED", "TWENTY", "TEN", "FIVE", "ONE", "QUARTER", "DIME", "NICKEL", "PENNY"];
 
+  let result;
+
   //Calculate total money available in the register
   function countRegisterBalance(cid) {
     let total = 0;
     cid.forEach((drawer) => {
       total = total + drawer[1];
     });
+    console.log("Total register balance: " + Number(parseFloat(total).toFixed(2)));
     return Number(parseFloat(total).toFixed(2));
   }
   let registerBalance = countRegisterBalance(cid);
@@ -49,45 +52,46 @@ function checkCashRegister(price, cash, cid) {
       whatIsBeingUsed = dividerNames[dividers.indexOf(dividers[i])];
     }
 
-    return {
+    let usageOfSpecificBillCoinHeight = {
       howMuchToUse: howMuchToUse,
       whatIsBeingUsed: whatIsBeingUsed
-    };
+    }
+
+    // console.log("How much of what to use: " + usageOfSpecificBillCoinHeight.whatIsBeingUsed);
+    // console.log("How much of what to use: " + usageOfSpecificBillCoinHeight.howMuchToUse);
+
+    return usageOfSpecificBillCoinHeight;
 
   }
 
-  //Find out how each set of coins and bills available in the register can contribute towards the amount that should be returned
+  //Find out how coins/bills of each height available in the register can contribute towards the amount that should be returned
   function individualRegisterAmountsUsage() {
     for (let i = 0; i < cid.length; i++) {
       //The remaining part of the sum-to-be-returned can get at least partially covered by the bill/coin of the specific height
-      if (parseInt((amountToReturn - sumToBeReturned()) / dividers[i]) >= 0) {
-        howMuchToUseofTheSpecificBillCoinHeight(i)
-
-      }
-      //The remaining part of the sum-to-be-returned CANNOT (not even partially) covered by the bill/coin of the specific height
-      else {
-
+      if (parseInt((amountToReturn - sumToBeReturned()) / dividers[i]) > 0) {
+        individualChangeAmountsToBeReturned.push(howMuchToUseofTheSpecificBillCoinHeight(i).howMuchToUse);
+        individualChangeNamesToBeReturned.push(howMuchToUseofTheSpecificBillCoinHeight(i).whatIsBeingUsed);
       }
 
     }
+    let usageOfIndividualRegisterAmounts = {
+      individualChangeAmountsToBeReturned: individualChangeAmountsToBeReturned,
+      individualChangeNamesToBeReturned: individualChangeNamesToBeReturned
+    };
+    console.log("Individual register-amount usage: " + usageOfIndividualRegisterAmounts.individualChangeAmountsToBeReturned);
+    console.log("Individual register-amount usage: " + usageOfIndividualRegisterAmounts.individualChangeNamesToBeReturned);
+    getEvaluation(usageOfIndividualRegisterAmounts);
   }
 
-
-
-  function returnChange(amountToReturn) {
-
-
-
-
-  };
-
-
-
   //Evaluate the result
-  function returnFinalStatement() {
+  function getEvaluation(returnChangeOutput) {
+    console.log("Final evaluation received:");
+    console.log(returnChangeOutput);
+    let evaluation;
+
     //1] If there is not enough money in the regiser to return
     if (amountToReturn > registerBalance) {
-      return {
+      evaluation = {
         status: "INSUFFICIENT_FUNDS",
         change: []
       };
@@ -95,9 +99,9 @@ function checkCashRegister(price, cash, cid) {
 
     //2] If exactly enough money in the register
     else if (amountToReturn === registerBalance) {
-      return {
+      evaluation = {
         status: "CLOSED",
-        change: [...cid]
+        change: [...cid].reverse()
       };
     }
 
@@ -106,12 +110,12 @@ function checkCashRegister(price, cash, cid) {
 
       //3.1] The available money bills/coins doesnt allow to return the needed amount
       if (
-        returnChange(amountToReturn).individualChangeAmountsToBeReturned.reduce((sum, nextAmount) => {
+        returnChangeOutput.individualChangeAmountsToBeReturned.reduce((sum, nextAmount) => {
           return sum + nextAmount;
         }) <
         amountToReturn
       ) {
-        return {
+        evaluation = {
           status: "INSUFFICIENT_FUNDS",
           change: []
         };
@@ -119,32 +123,36 @@ function checkCashRegister(price, cash, cid) {
       //3.2] The available money bills/coins allows to return the needed amount
       else {
         let setOfChangeToBeReturned = []
-        let returnedChange = returnChange(amountToReturn);
-        for (let i = 0; i < returnedChange.individualChangeNamesToBeReturned.length; i++) {
-          setOfChangeToBeReturned.push([returnedChange.individualChangeNamesToBeReturned[i], returnedChange.individualChangeAmountsToBeReturned[i]]);
+        for (let i = 0; i < returnChangeOutput.individualChangeNamesToBeReturned.length; i++) {
+          setOfChangeToBeReturned.push([returnChangeOutput.individualChangeNamesToBeReturned[i], returnChangeOutput.individualChangeAmountsToBeReturned[i]]);
         }
-        return {
+        evaluation = {
           status: "OPEN",
           change: [...setOfChangeToBeReturned]
         };
       }
-
     }
+
+    return result = evaluation;
   }
 
+  //Triggers the fist function to which other functions are chained. The oucome of the chain is a result.
+  individualRegisterAmountsUsage();
+
+  return result;
 
 }
 
 
 
 console.log(checkCashRegister(19.5, 20, [
-  ["PENNY", 1.01],
-  ["NICKEL", 2.05],
-  ["DIME", 3.1],
-  ["QUARTER", 4.25],
-  ["ONE", 90],
-  ["FIVE", 55],
-  ["TEN", 20],
-  ["TWENTY", 60],
-  ["ONE HUNDRED", 100]
+  ["PENNY", 0.5],
+  ["NICKEL", 0],
+  ["DIME", 0],
+  ["QUARTER", 0],
+  ["ONE", 0],
+  ["FIVE", 0],
+  ["TEN", 0],
+  ["TWENTY", 0],
+  ["ONE HUNDRED", 0]
 ]));
